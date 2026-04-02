@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Payroll Services</fullName>
+        <default>false</default>
+        <label>Payroll Services</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Payroll Technology</fullName>
+        <default>false</default>
+        <label>Payroll Technology</label>
+    </standardValue>
+    <standardValue>
+        <fullName>HR Services</fullName>
+        <default>false</default>
+        <label>HR Services</label>
+    </standardValue>
+    <standardValue>
+        <fullName>HR Technology</fullName>
+        <default>false</default>
+        <label>HR Technology</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Benefits &amp; Insurance Services</fullName>
+        <default>false</default>
+        <label>Benefits &amp; Insurance Services</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Bookkeeping Services</fullName>
+        <default>false</default>
+        <label>Bookkeeping Services</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Bookkeeping Technology</fullName>
+        <default>false</default>
+        <label>Bookkeeping Technology</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Employer of Record (EOR) Services</fullName>
+        <default>false</default>
+        <label>Employer of Record (EOR) Services</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Visa Services</fullName>
+        <default>false</default>
+        <label>Visa Services</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Company Setup Services</fullName>
+        <default>false</default>
+        <label>Company Setup Services</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Company Secretarial Services</fullName>
+        <default>false</default>
+        <label>Company Secretarial Services</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Company Secretarial Services Fees</fullName>
+        <default>false</default>
+        <label>Company Secretarial Services Fees</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Registered Office Services</fullName>
+        <default>false</default>
+        <label>Registered Office Services</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Nominee Director Services</fullName>
+        <default>false</default>
+        <label>Nominee Director Services</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Health &amp; Safety Services</fullName>
+        <default>false</default>
+        <label>Health &amp; Safety Services</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Training Services</fullName>
+        <default>false</default>
+        <label>Training Services</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Agent of Record (AOR) Services</fullName>
+        <default>false</default>
+        <label>Agent of Record (AOR) Services</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Professional Employment Organisation (PEO) Services</fullName>
+        <default>false</default>
+        <label>Professional Employment Organisation (PEO) Services</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Recruitment Services</fullName>
+        <default>false</default>
+        <label>Recruitment Services</label>
+    </standardValue>
+</StandardValueSet>

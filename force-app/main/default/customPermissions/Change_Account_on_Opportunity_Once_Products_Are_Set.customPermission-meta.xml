@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomPermission xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Permission to change Account on Opportunity once Products are added.</description>
+    <isLicensed>false</isLicensed>
+    <label>Change Account on Opportunity Once Products Are Set</label>
+</CustomPermission>

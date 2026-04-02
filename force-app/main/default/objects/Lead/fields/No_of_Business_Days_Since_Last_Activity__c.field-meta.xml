@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>No_of_Business_Days_Since_Last_Activity__c</fullName>
+    <description>No. of business days since Last Activity (based on related Activities) or Last Modified Date.</description>
+    <externalId>false</externalId>
+    <formula>IF(
+    AND(
+        ISBLANK(LastActivityDate),
+        ISBLANK(LastModifiedDate)
+    ),
+    NULL,
+    (
+        /* Total days between today and last touch date */
+        (
+            TODAY() -
+            IF(
+                ISBLANK(LastActivityDate),
+                /* Only LastModifiedDate present */
+                DATEVALUE(LastModifiedDate),
+                IF(
+                    ISBLANK(LastModifiedDate),
+                    /* Only LastActivityDate present */
+                    LastActivityDate,
+                    /* Both present: use numeric MAX of the two dates */
+                    DATE(1900, 1, 1) +
+                    MAX(
+                        LastActivityDate - DATE(1900, 1, 1),
+                        DATEVALUE(LastModifiedDate) - DATE(1900, 1, 1)
+                    )
+                )
+            )
+        )
+        -
+        /* Remove weekend days */
+        (
+            FLOOR(
+                (
+                    TODAY() -
+                    IF(
+                        ISBLANK(LastActivityDate),
+                        DATEVALUE(LastModifiedDate),
+                        IF(
+                            ISBLANK(LastModifiedDate),
+                            LastActivityDate,
+                            DATE(1900, 1, 1) +
+                            MAX(
+                                LastActivityDate - DATE(1900, 1, 1),
+                                DATEVALUE(LastModifiedDate) - DATE(1900, 1, 1)
+                            )
+                        )
+                    )
+                    +
+                    WEEKDAY(
+                        IF(
+                            ISBLANK(LastActivityDate),
+                            DATEVALUE(LastModifiedDate),
+                            IF(
+                                ISBLANK(LastModifiedDate),
+                                LastActivityDate,
+                                DATE(1900, 1, 1) +
+                                MAX(
+                                    LastActivityDate - DATE(1900, 1, 1),
+                                    DATEVALUE(LastModifiedDate) - DATE(1900, 1, 1)
+                                )
+                            )
+                        )
+                    )
+                    - 1
+                ) / 7
+            ) * 2
+        )
+        -
+        IF(
+            WEEKDAY(TODAY()) &lt;
+            WEEKDAY(
+                IF(
+                    ISBLANK(LastActivityDate),
+                    DATEVALUE(LastModifiedDate),
+                    IF(
+                        ISBLANK(LastModifiedDate),
+                        LastActivityDate,
+                        DATE(1900, 1, 1) +
+                        MAX(
+                            LastActivityDate - DATE(1900, 1, 1),
+                            DATEVALUE(LastModifiedDate) - DATE(1900, 1, 1)
+                        )
+                    )
+                )
+            ),
+            2,
+            0
+        )
+    )
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>No. of Business Days Since Last Activity</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

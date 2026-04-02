@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CannotChangePostApproval</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ ISPICKVAL( Opportunity.Fees_Approval_Status__c, &quot;Approved&quot;),
+NOT($Permission.Modify_or_Add_Products_Once_Fees_Approved),
+ OR(
+ISCHANGED( UnitPrice ),
+ISNEW()
+)
+)</errorConditionFormula>
+    <errorMessage>Cannot add or modify fees after Fees have been approved.</errorMessage>
+</ValidationRule>

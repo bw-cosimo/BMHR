@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Qualified_OtherLocations</fullName>
+    <active>false</active>
+    <description>The Other Location(s) field must be filled in before a lead can be converted.</description>
+    <errorConditionFormula>AND(
+ISCHANGED(Status),
+ISPICKVAL(Status, &quot;Qualified&quot;),
+ISBLANK(Other_Locations__c)
+)</errorConditionFormula>
+    <errorDisplayField>Other_Locations__c</errorDisplayField>
+    <errorMessage>Specify Other Location(s).</errorMessage>
+</ValidationRule>

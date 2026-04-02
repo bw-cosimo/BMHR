@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>StageProposalCreation_FeesApproval</fullName>
+    <active>true</active>
+    <description>Before sending out to the client, the fee approval process must have been completed.</description>
+    <errorConditionFormula>AND(
+ISCHANGED(StageName),
+ISPICKVAL(StageName, &apos;Proposal Creation&apos;),
+NOT(ISPICKVAL(Fees_Approval_Status__c, &apos;Approved&apos;))
+)</errorConditionFormula>
+    <errorMessage>Cannot move to Proposal Creation stage until fees are approved. Submit the record for approval.</errorMessage>
+</ValidationRule>

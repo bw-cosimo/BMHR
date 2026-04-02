@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>StatusGivenNoticeOrTerminated_ProvideRea</fullName>
+    <active>false</active>
+    <description>When Account Status is &quot;Given Notice&quot; or &quot;Terminated&quot; please specify the Termination Reason(s).</description>
+    <errorConditionFormula>AND(
+ISCHANGED(Status__c),
+OR(
+ISPICKVAL(Status__c, &quot;Given Notice&quot;),
+ISPICKVAL(Status__c, &quot;Terminated&quot;)
+),
+ISBLANK(Termination_Reasons__c)
+)</errorConditionFormula>
+    <errorDisplayField>Termination_Reasons__c</errorDisplayField>
+    <errorMessage>Specify Termination Reason(s).</errorMessage>
+</ValidationRule>

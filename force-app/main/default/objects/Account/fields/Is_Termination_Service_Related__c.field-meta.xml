@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Termination_Service_Related__c</fullName>
+    <formula>OR(
+INCLUDES(Termination_Reasons__c, &apos;Pricing too high&apos;),
+INCLUDES(Termination_Reasons__c, &apos;Budget Constraints&apos;),
+INCLUDES(Termination_Reasons__c, &apos;Perceived Lack of ROI&apos;),
+INCLUDES(Termination_Reasons__c, &apos;Service Quality&apos;),
+INCLUDES(Termination_Reasons__c, &apos;Unresolved support issues&apos;),
+INCLUDES(Termination_Reasons__c, &apos;Taken in House&apos;),
+INCLUDES(Termination_Reasons__c, &apos;Change of Vendor&apos;),
+INCLUDES(Termination_Reasons__c, &apos;Legal / Compliance Concerns&apos;)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Evaluates if the termination reasons were service related.</inlineHelpText>
+    <label>Is Termination Service Related?</label>
+    <type>Checkbox</type>
+</CustomField>

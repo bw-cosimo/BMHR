@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>KYC Response</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>KYC Responses</value>
+    </caseValues>
+    <layouts>
+        <layout>Client - KYC Response Layout</layout>
+        <sections>
+            <label><!-- Black Mountain Form Review --></label>
+            <section>Black Mountain Form Review</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Form Link --></label>
+            <section>Form Link</section>
+        </sections>
+        <sections>
+            <label><!-- Form Response --></label>
+            <section>Form Response</section>
+        </sections>
+        <sections>
+            <label><!-- KYC Form Details --></label>
+            <section>KYC Form Details</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Partner/Affiliate - KYC Response Layout</layout>
+        <sections>
+            <label><!-- Black Mountain Form Review --></label>
+            <section>Black Mountain Form Review</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Form Link --></label>
+            <section>Form Link</section>
+        </sections>
+        <sections>
+            <label><!-- Form Response --></label>
+            <section>Form Response</section>
+        </sections>
+        <sections>
+            <label><!-- KYC Form Details --></label>
+            <section>KYC Form Details</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Client Form --></label>
+        <name>Client_Form</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Partner/Affiliate Form --></label>
+        <name>Partner_Affiliate_Form</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- The status may be updated to &quot;Pending Compliance Review&quot; only when the Director Approval checkbox has been selected. --></errorMessage>
+        <name>ComplianceReviewStatus_DirectorApproval</name>
+    </validationRules>
+</CustomObjectTranslation>

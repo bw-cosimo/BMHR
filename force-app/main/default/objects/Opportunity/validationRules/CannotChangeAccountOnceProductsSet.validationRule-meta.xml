@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CannotChangeAccountOnceProductsSet</fullName>
+    <active>true</active>
+    <description>Cannot change Account once Products are set.</description>
+    <errorConditionFormula>AND(
+HasOpportunityLineItem,
+OR(
+ISCHANGED( AccountId ),
+ISCHANGED( Contracting_Account__c ),
+ISCHANGED( Billing_Account__c )
+),
+NOT( $Permission.Change_Account_on_Opportunity_Once_Products_Are_Set )
+)</errorConditionFormula>
+    <errorMessage>Cannot change Account once Products are added, contact your System Admin for help.</errorMessage>
+</ValidationRule>

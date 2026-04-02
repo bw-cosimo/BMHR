@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Evaluates if the termination reasons were service related. --></help>
+    <label><!-- Is Termination Service Related? --></label>
+    <name>Is_Termination_Service_Related__c</name>
+</CustomFieldTranslation>

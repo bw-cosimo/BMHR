@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>65.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <description>Set Recurring Fee field based on Product Billing Frequency.</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>isRecurringFee</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+NOT(ISPICKVAL({!$Record.Product2.Billing_Frequency__c},&apos;Ad-hoc&apos;)),
+NOT(ISPICKVAL({!$Record.Product2.Billing_Frequency__c},&apos;One-off&apos;))
+)</expression>
+    </formulas>
+    <interviewLabel>Set Recurring Fee Field based on Product Billing Frequency {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Set Recurring Fee Field Based on Product Billing Frequency</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Set_Recurring_Fee_Flag_based_on_Product_Billing_Frequency</name>
+        <label>Set Recurring Fee Flag based on Product Billing Frequency</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <inputAssignments>
+            <field>Is_Recurring_Fee__c</field>
+            <value>
+                <elementReference>isRecurringFee</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Set_Recurring_Fee_Flag_based_on_Product_Billing_Frequency</targetReference>
+        </connector>
+        <object>OpportunityLineItem</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

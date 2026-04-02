@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- There is a maximum of 5 levels in the account hierarchy. --></help>
+    <label><!-- Ultimate Parent Company --></label>
+    <name>Ultimate_Parent_Company__c</name>
+</CustomFieldTranslation>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Qualified_ServiceRequested</fullName>
+    <active>true</active>
+    <description>The Service(s) Requested field must be filled in before a lead can be converted.</description>
+    <errorConditionFormula>AND(
+ISCHANGED(Status),
+ISPICKVAL(Status, &quot;Qualified&quot;),
+ISBLANK(Services_Requested_Covered__c)
+)</errorConditionFormula>
+    <errorDisplayField>Services_Requested_Covered__c</errorDisplayField>
+    <errorMessage>Specify Service(s) Requested.</errorMessage>
+</ValidationRule>

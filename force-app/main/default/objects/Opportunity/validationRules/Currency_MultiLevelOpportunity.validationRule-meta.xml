@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Currency_MultiLevelOpportunity</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+NOT(ISPICKVAL(CurrencyIsoCode, &apos;HKD&apos;)),
+No_of_Child_Opportunities__c &gt; 0
+)</errorConditionFormula>
+    <errorMessage>Parent Opportunity currency must be HKD.</errorMessage>
+</ValidationRule>

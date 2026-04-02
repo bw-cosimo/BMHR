@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Payment of staff salaries - locally</fullName>
+        <default>false</default>
+        <label>Payment of staff salaries - locally</label>
+    </customValue>
+    <customValue>
+        <fullName>Payment of staff salaries - outside territory</fullName>
+        <default>false</default>
+        <label>Payment of staff salaries - outside territory</label>
+    </customValue>
+    <customValue>
+        <fullName>Sizeable Payments to people not on payroll</fullName>
+        <default>false</default>
+        <label>Sizeable Payments to people not on payroll</label>
+    </customValue>
+    <customValue>
+        <fullName>Irregular payments to Contractors  not on payroll</fullName>
+        <default>false</default>
+        <label>Irregular payments to Contractors  not on payroll</label>
+    </customValue>
+    <customValue>
+        <fullName>Payment of Local payroll taxes/ social security</fullName>
+        <default>false</default>
+        <label>Payment of Local payroll taxes/ social security</label>
+    </customValue>
+    <customValue>
+        <fullName>Payment of Insurance premiums</fullName>
+        <default>false</default>
+        <label>Payment of Insurance premiums</label>
+    </customValue>
+    <customValue>
+        <fullName>Payment of local government levies and dues</fullName>
+        <default>false</default>
+        <label>Payment of local government levies and dues</label>
+    </customValue>
+    <customValue>
+        <fullName>Regular Payments to retirement plans</fullName>
+        <default>false</default>
+        <label>Regular Payments to retirement plans</label>
+    </customValue>
+    <customValue>
+        <fullName>Payment of local expenses on behalf of client</fullName>
+        <default>false</default>
+        <label>Payment of local expenses on behalf of client</label>
+    </customValue>
+    <customValue>
+        <fullName>Purchase of Major Assets</fullName>
+        <default>false</default>
+        <label>Purchase of Major Assets</label>
+    </customValue>
+    <customValue>
+        <fullName>Retirement Investments</fullName>
+        <default>false</default>
+        <label>Retirement Investments</label>
+    </customValue>
+    <customValue>
+        <fullName>Short-term Investments</fullName>
+        <default>false</default>
+        <label>Short-term Investments</label>
+    </customValue>
+    <customValue>
+        <fullName>Custody of Intangible Assets</fullName>
+        <default>false</default>
+        <label>Custody of Intangible Assets</label>
+    </customValue>
+    <customValue>
+        <fullName>Custody of Tangible Assets</fullName>
+        <default>false</default>
+        <label>Custody of Tangible Assets</label>
+    </customValue>
+    <description>Fundflow values used across Risk Rating settings.</description>
+    <masterLabel>Fundflow</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

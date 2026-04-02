@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <quickActions>
+        <label><!-- Add to Nurture List --></label>
+        <name>pi__Add_to_Nurture_List</name>
+    </quickActions>
+    <validationRules>
+        <errorMessage><!-- Specify Disqualified Reason(s). --></errorMessage>
+        <name>Disualified_SpecifyReasons</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Specify Other Location(s). --></errorMessage>
+        <name>Qualified_OtherLocations</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Specify Primary Location. --></errorMessage>
+        <name>Qualified_PrimaryLocation</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Specify Service(s) Requested. --></errorMessage>
+        <name>Qualified_ServiceRequested</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- GoogleMaps --></label>
+        <name>GoogleMaps</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- GoogleNews --></label>
+        <name>GoogleNews</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- GoogleSearch --></label>
+        <name>GoogleSearch</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Send_Pardot_Email --></label>
+        <name>pi__Send_Pardot_Email</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Send_Pardot_Emails --></label>
+        <name>pi__Send_Pardot_Emails</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Send_Single_Pardot_Email --></label>
+        <name>pi__Send_Single_Pardot_Email</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Send_to_Prospect_Insight --></label>
+        <name>pi__Send_to_Prospect_Insight</name>
+    </webLinks>
+</CustomObjectTranslation>

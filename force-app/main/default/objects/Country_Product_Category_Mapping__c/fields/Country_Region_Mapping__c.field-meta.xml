@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Country_Region_Mapping__c</fullName>
+    <label>Country - Region Mapping</label>
+    <referenceTo>Country_Region_BM_Entity_Mapping__c</referenceTo>
+    <relationshipLabel>Country - Product Category Mappings</relationshipLabel>
+    <relationshipName>Country_Product_Category_Mappings</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

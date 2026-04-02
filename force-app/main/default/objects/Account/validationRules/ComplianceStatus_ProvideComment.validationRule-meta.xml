@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ComplianceStatus_ProvideComment</fullName>
+    <active>false</active>
+    <description>When Compliance Status is changed, provide Comment.</description>
+    <errorConditionFormula>AND(
+ISCHANGED(Compliance_Status__c),
+NOT(ISPICKVAL(Compliance_Status__c, &quot;None&quot;)),
+NOT(ISPICKVAL(Compliance_Status__c, &quot;Pending&quot;)),
+NOT(ISCHANGED( Compliance_Comment__c ))
+)</errorConditionFormula>
+    <errorDisplayField>Compliance_Comment__c</errorDisplayField>
+    <errorMessage>Update Comment when Compliance Status is changed.</errorMessage>
+</ValidationRule>

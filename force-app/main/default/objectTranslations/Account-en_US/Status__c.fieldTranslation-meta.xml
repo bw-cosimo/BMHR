@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Status --></label>
+    <name>Status__c</name>
+    <picklistValues>
+        <masterLabel>Disqualified</masterLabel>
+        <translation><!-- Disqualified --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Given Notice</masterLabel>
+        <translation><!-- Given Notice --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Inactive</masterLabel>
+        <translation><!-- Inactive --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Live</masterLabel>
+        <translation><!-- Live --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Prospect</masterLabel>
+        <translation><!-- Prospect --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Terminated</masterLabel>
+        <translation><!-- Terminated --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Compliance_Rejection_Reasons__c</fullName>
+    <label>Compliance Rejection Reason(s)</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Declined KYC Request</fullName>
+                <default>false</default>
+                <label>Declined KYC Request</label>
+            </value>
+            <value>
+                <fullName>Insufficient Documentation Provided</fullName>
+                <default>false</default>
+                <label>Insufficient Documentation Provided</label>
+            </value>
+            <value>
+                <fullName>Risk Assessed as Unacceptable</fullName>
+                <default>false</default>
+                <label>Risk Assessed as Unacceptable</label>
+            </value>
+            <value>
+                <fullName>Source Funds Unclear</fullName>
+                <default>false</default>
+                <label>Source Funds Unclear</label>
+            </value>
+            <value>
+                <fullName>Suspicious or Fraudulent Information</fullName>
+                <default>false</default>
+                <label>Suspicious or Fraudulent Information</label>
+            </value>
+            <value>
+                <fullName>AML Breach</fullName>
+                <default>false</default>
+                <label>AML Breach</label>
+            </value>
+            <value>
+                <fullName>Sanctions Breach</fullName>
+                <default>false</default>
+                <label>Sanctions Breach</label>
+            </value>
+            <value>
+                <fullName>PEP</fullName>
+                <default>false</default>
+                <label>PEP</label>
+            </value>
+            <value>
+                <fullName>Adverse Media / PR</fullName>
+                <default>false</default>
+                <label>Adverse Media / PR</label>
+            </value>
+            <value>
+                <fullName>Rejected for Another Reason</fullName>
+                <default>false</default>
+                <label>Rejected for Another Reason</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

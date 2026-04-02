@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Corporate_or_Management_Malpractice__c</fullName>
+    <inlineHelpText>Are there any instances on record or pending against your Company and /or its Directors in respect of any financial matter, corporate or management malpractice or non-compliance with any statute?</inlineHelpText>
+    <label>Corporate or Management Malpractice</label>
+    <length>10000</length>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

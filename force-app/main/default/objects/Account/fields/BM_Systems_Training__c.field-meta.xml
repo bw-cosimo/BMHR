@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BM_Systems_Training__c</fullName>
+    <label>BM Systems Training</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>BM Technology partners</fullName>
+                <default>false</default>
+                <label>BM Technology partners</label>
+            </value>
+            <value>
+                <fullName>Ippex</fullName>
+                <default>false</default>
+                <label>Ippex</label>
+            </value>
+            <value>
+                <fullName>Payzaar</fullName>
+                <default>false</default>
+                <label>Payzaar</label>
+            </value>
+            <value>
+                <fullName>People HR</fullName>
+                <default>false</default>
+                <label>People HR</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

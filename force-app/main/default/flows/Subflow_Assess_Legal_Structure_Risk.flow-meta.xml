@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>65.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <description>Runs as a subflow - accepts Legal Structure name as input parameter; returns risk and score based on the Risk Rating - Legal Structure record.</description>
+    <environments>Default</environments>
+    <interviewLabel>Subflow - Assess Legal Structure Risk {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Subflow - Assess Legal Structure Risk</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Risk_Rating_Legal_Structure</name>
+        <label>Get Risk Rating - Legal Structure</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Legal_Structure__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>legalStructure</elementReference>
+            </value>
+        </filters>
+        <object>Risk_Rating_Score_Legal_Structure__c</object>
+        <outputAssignments>
+            <assignToReference>scoreNum</assignToReference>
+            <field>Score__c</field>
+        </outputAssignments>
+    </recordLookups>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Risk_Rating_Legal_Structure</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>legalStructure</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>scoreNum</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+        <scale>0</scale>
+    </variables>
+</Flow>

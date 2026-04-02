@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ComplianceStatus_Rejected</fullName>
+    <active>false</active>
+    <description>When Compliance Status equals Rejected, specify Rejection Reason(s).</description>
+    <errorConditionFormula>AND(
+ISCHANGED(Compliance_Status__c),
+ISPICKVAL(Compliance_Status__c, &quot;Rejected&quot;),
+ISBLANK( Compliance_Rejection_Reasons__c )
+)</errorConditionFormula>
+    <errorDisplayField>Compliance_Rejection_Reasons__c</errorDisplayField>
+    <errorMessage>Specify Compliance Rejection Reason(s).</errorMessage>
+</ValidationRule>

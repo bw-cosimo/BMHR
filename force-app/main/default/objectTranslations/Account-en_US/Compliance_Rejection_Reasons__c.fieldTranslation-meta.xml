@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Compliance Rejection Reason(s) --></label>
+    <name>Compliance_Rejection_Reasons__c</name>
+    <picklistValues>
+        <masterLabel>AML Breach</masterLabel>
+        <translation><!-- AML Breach --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Adverse Media / PR</masterLabel>
+        <translation><!-- Adverse Media / PR --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Declined KYC Request</masterLabel>
+        <translation><!-- Declined KYC Request --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Insufficient Documentation Provided</masterLabel>
+        <translation><!-- Insufficient Documentation Provided --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PEP</masterLabel>
+        <translation><!-- PEP --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Rejected for Another Reason</masterLabel>
+        <translation><!-- Rejected for Another Reason --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Risk Assessed as Unacceptable</masterLabel>
+        <translation><!-- Risk Assessed as Unacceptable --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sanctions Breach</masterLabel>
+        <translation><!-- Sanctions Breach --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Source Funds Unclear</masterLabel>
+        <translation><!-- Source Funds Unclear --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Suspicious or Fraudulent Information</masterLabel>
+        <translation><!-- Suspicious or Fraudulent Information --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

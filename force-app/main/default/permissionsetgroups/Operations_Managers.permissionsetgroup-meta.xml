@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Operations Managers</label>
+    <permissionSets>Internal_System_Permissions</permissionSets>
+    <permissionSets>Manage_Activities</permissionSets>
+    <permissionSets>Manage_Clients</permissionSets>
+    <permissionSets>Manage_Contacts</permissionSets>
+    <permissionSets>Manage_Contracts</permissionSets>
+    <permissionSets>Manage_KYC_Responses</permissionSets>
+    <permissionSets>Manage_Opportunities_and_Products</permissionSets>
+    <permissionSets>Run_Reports_and_Dashboards</permissionSets>
+    <permissionSets>View_Accounts</permissionSets>
+    <permissionSets>View_Invoices_and_Credit_Notes</permissionSets>
+    <permissionSets>View_Risk_Rating_Settings</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

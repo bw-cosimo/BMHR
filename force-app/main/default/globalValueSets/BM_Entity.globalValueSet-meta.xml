@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>BMUK</fullName>
+        <default>false</default>
+        <label>Black Mountain UK</label>
+    </customValue>
+    <customValue>
+        <fullName>BMHK</fullName>
+        <default>false</default>
+        <label>Black Mountain Hong Kong</label>
+    </customValue>
+    <customValue>
+        <fullName>BMEB</fullName>
+        <default>false</default>
+        <label>Black Mountain Employee Benefits</label>
+    </customValue>
+    <customValue>
+        <fullName>BMIB</fullName>
+        <default>false</default>
+        <label>Black Mountain Insurance Brokers</label>
+    </customValue>
+    <customValue>
+        <fullName>BMHR</fullName>
+        <default>false</default>
+        <label>Black Mountain Human Resources</label>
+    </customValue>
+    <customValue>
+        <fullName>BMSS</fullName>
+        <default>false</default>
+        <label>Black Mountain Secretarial Services</label>
+    </customValue>
+    <customValue>
+        <fullName>BMSG</fullName>
+        <default>false</default>
+        <label>Black Mountain Singapore</label>
+    </customValue>
+    <customValue>
+        <fullName>BMDE</fullName>
+        <default>false</default>
+        <label>Black Mountain Germany</label>
+    </customValue>
+    <customValue>
+        <fullName>BMSM</fullName>
+        <default>false</default>
+        <label>Black Mountain Malaysia</label>
+    </customValue>
+    <customValue>
+        <fullName>BMSP</fullName>
+        <default>false</default>
+        <label>Black Mountain Solutions Philippines</label>
+    </customValue>
+    <customValue>
+        <fullName>BMI</fullName>
+        <default>false</default>
+        <label>Black Mountain International</label>
+    </customValue>
+    <customValue>
+        <fullName>BMGB</fullName>
+        <default>false</default>
+        <label>Black Mountain Global Benefits</label>
+    </customValue>
+    <description>All Black Mountain entities.</description>
+    <masterLabel>BM Entity</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

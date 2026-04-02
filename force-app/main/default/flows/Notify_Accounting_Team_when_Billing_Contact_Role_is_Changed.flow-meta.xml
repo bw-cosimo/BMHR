@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>65.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Assign_Email_Country_Empty</name>
+        <label>Assign Email - Country Empty</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>accountingEmail</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Country_BM_Entity_Mapping_Empty_Country.Accounting_Email__c</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>Assign_Email_Country_Found</name>
+        <label>Assign Email - Country Found</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>accountingEmail</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Country_BM_Entity_Mapping.Accounting_Email__c</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <decisions>
+        <name>Country_BM_Entity_Mapping_Found</name>
+        <label>Country - BM Entity Mapping Found?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Get_Country_BM_Entity_Mapping_Empty_Country</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Mapping_Found</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Country_BM_Entity_Mapping</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Email_Country_Found</targetReference>
+            </connector>
+            <label>Mapping Found</label>
+        </rules>
+    </decisions>
+    <description>When Contact Role is changed to &quot;Primary Billing Contact&quot; or &quot;Additional Billing Contact&quot;, send notification to the Accounting Team of relevant BM Entity.</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>recordURL</name>
+        <dataType>String</dataType>
+        <expression>LEFT($Api.Partner_Server_URL_260, FIND( &apos;/services&apos;, $Api.Partner_Server_URL_260)) + {!$Record.Id}</expression>
+    </formulas>
+    <formulas>
+        <name>subject</name>
+        <dataType>String</dataType>
+        <expression>&quot;Billing Contact role changed for Contact &quot; + {!$Record.FirstName} + &quot; &quot; + {!$Record.LastName}</expression>
+    </formulas>
+    <interviewLabel>Notify Accounting Team when Billing Contact Role is Changed {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Notify Accounting Team when Billing Contact Role is Changed</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Country_BM_Entity_Mapping</name>
+        <label>Get Country - BM Entity Mapping</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Country_BM_Entity_Mapping_Found</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Country__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Account.Primary_Country__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Country_Region_BM_Entity_Mapping__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Country_BM_Entity_Mapping_Empty_Country</name>
+        <label>Get Country - BM Entity Mapping (Empty Country)</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Assign_Email_Country_Empty</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Country__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue></stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Country_Region_BM_Entity_Mapping__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Country_BM_Entity_Mapping</targetReference>
+        </connector>
+        <filterFormula>AND(
+ISCHANGED({!$Record.Role__c}),
+OR(
+ISPICKVAL({!$Record.Role__c}, &apos;Primary Billing Contact&apos;),
+ISPICKVAL({!$Record.Role__c}, &apos;Additional Billing Contact&apos;)
+)
+)</filterFormula>
+        <object>Contact</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Obsolete</status>
+    <variables>
+        <name>accountingEmail</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

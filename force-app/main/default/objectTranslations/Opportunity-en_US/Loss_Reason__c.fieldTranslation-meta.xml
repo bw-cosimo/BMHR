@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Loss Reason(s) --></label>
+    <name>Loss_Reason__c</name>
+    <picklistValues>
+        <masterLabel>Client budget contraints</masterLabel>
+        <translation><!-- Client budget contraints --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Compliance Rejected</masterLabel>
+        <translation><!-- Compliance Rejected --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Internal resistance</masterLabel>
+        <translation><!-- Internal resistance --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Poor follow up and communication</masterLabel>
+        <translation><!-- Poor follow up and communication --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Uncompetitive pricing</masterLabel>
+        <translation><!-- Uncompetitive pricing --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Weak product fit/value proposition</masterLabel>
+        <translation><!-- Weak product fit/value proposition --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Wrong audience/No decision making power</masterLabel>
+        <translation><!-- Wrong audience/No decision making power --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

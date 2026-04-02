@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Provides access to modify Client Solution Director Approval field on KYC Response.</description>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>KYC_Response__c.Client_Solution_Director_Approval__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Client Solution Director</label>
+</PermissionSet>

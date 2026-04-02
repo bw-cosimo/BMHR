@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Account Management</fullName>
+        <default>false</default>
+        <label>Account Management</label>
+    </customValue>
+    <customValue>
+        <fullName>Account Management Services</fullName>
+        <default>false</default>
+        <label>Account Management Services</label>
+    </customValue>
+    <customValue>
+        <fullName>Agent of Record (AOR) Services</fullName>
+        <default>false</default>
+        <label>Agent of Record (AOR) Services</label>
+    </customValue>
+    <customValue>
+        <fullName>Bank Account Set-up</fullName>
+        <default>false</default>
+        <label>Bank Account Set-up</label>
+    </customValue>
+    <customValue>
+        <fullName>Benefits &amp; Insurance Services</fullName>
+        <default>false</default>
+        <label>Benefits &amp; Insurance Services</label>
+    </customValue>
+    <customValue>
+        <fullName>Benefits Technology</fullName>
+        <default>false</default>
+        <label>Benefits Technology</label>
+    </customValue>
+    <customValue>
+        <fullName>Bookkeeping Services</fullName>
+        <default>false</default>
+        <label>Bookkeeping Services</label>
+    </customValue>
+    <customValue>
+        <fullName>Bookkeeping Technology</fullName>
+        <default>false</default>
+        <label>Bookkeeping Technology</label>
+    </customValue>
+    <customValue>
+        <fullName>Company Administration</fullName>
+        <default>false</default>
+        <label>Company Administration</label>
+    </customValue>
+    <customValue>
+        <fullName>Company Secretarial Services</fullName>
+        <default>false</default>
+        <label>Company Secretarial Services</label>
+    </customValue>
+    <customValue>
+        <fullName>Company Secretarial Services Fees</fullName>
+        <default>false</default>
+        <label>Company Secretarial Services Fees</label>
+    </customValue>
+    <customValue>
+        <fullName>Company Setup Services</fullName>
+        <default>false</default>
+        <label>Company Setup Services</label>
+    </customValue>
+    <customValue>
+        <fullName>eMPF Services</fullName>
+        <default>false</default>
+        <label>eMPF Services</label>
+    </customValue>
+    <customValue>
+        <fullName>Employer of Record (EOR) Services</fullName>
+        <default>false</default>
+        <label>Employer of Record (EOR) Services</label>
+    </customValue>
+    <customValue>
+        <fullName>Health &amp; Safety Services</fullName>
+        <default>false</default>
+        <label>Health &amp; Safety Services</label>
+    </customValue>
+    <customValue>
+        <fullName>HR Services</fullName>
+        <default>false</default>
+        <label>HR Services</label>
+    </customValue>
+    <customValue>
+        <fullName>HR Technology</fullName>
+        <default>false</default>
+        <label>HR Technology</label>
+    </customValue>
+    <customValue>
+        <fullName>Learning &amp; Development Training</fullName>
+        <default>false</default>
+        <label>Learning &amp; Development Training</label>
+    </customValue>
+    <customValue>
+        <fullName>MPF</fullName>
+        <default>false</default>
+        <label>MPF</label>
+    </customValue>
+    <customValue>
+        <fullName>Nominee Director Services</fullName>
+        <default>false</default>
+        <label>Nominee Director Services</label>
+    </customValue>
+    <customValue>
+        <fullName>Payments Services / Cash Management</fullName>
+        <default>false</default>
+        <label>Payments Services / Cash Management</label>
+    </customValue>
+    <customValue>
+        <fullName>Payroll Services</fullName>
+        <default>false</default>
+        <label>Payroll Services</label>
+    </customValue>
+    <customValue>
+        <fullName>Payroll Technology</fullName>
+        <default>false</default>
+        <label>Payroll Technology</label>
+    </customValue>
+    <customValue>
+        <fullName>Professional Employment Organisation (PEO) Services</fullName>
+        <default>false</default>
+        <label>Professional Employment Organisation (PEO) Services</label>
+    </customValue>
+    <customValue>
+        <fullName>Recruitment Services</fullName>
+        <default>false</default>
+        <label>Recruitment Services</label>
+    </customValue>
+    <customValue>
+        <fullName>Registered Office Services</fullName>
+        <default>false</default>
+        <label>Registered Office Services</label>
+    </customValue>
+    <customValue>
+        <fullName>Rental Reimbursement</fullName>
+        <default>false</default>
+        <label>Rental Reimbursement</label>
+    </customValue>
+    <customValue>
+        <fullName>Rental Reimbursement Services</fullName>
+        <default>false</default>
+        <label>Rental Reimbursement Services</label>
+    </customValue>
+    <customValue>
+        <fullName>Training Services</fullName>
+        <default>false</default>
+        <label>Training Services</label>
+    </customValue>
+    <customValue>
+        <fullName>Treasury Services</fullName>
+        <default>false</default>
+        <label>Treasury Services</label>
+    </customValue>
+    <customValue>
+        <fullName>Visa Services</fullName>
+        <default>false</default>
+        <label>Visa Services</label>
+    </customValue>
+    <customValue>
+        <fullName>Payroll</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Payroll</label>
+    </customValue>
+    <customValue>
+        <fullName>Employee Benefits</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Employee Benefits</label>
+    </customValue>
+    <description>All Black Mountain service types/product categories.</description>
+    <masterLabel>Product Category</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

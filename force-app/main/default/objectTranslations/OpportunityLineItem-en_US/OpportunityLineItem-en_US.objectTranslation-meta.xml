@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <layouts>
+        <layout>Opportunity Product Layout</layout>
+        <sections>
+            <label><!-- Cost Details --></label>
+            <section>Cost Details</section>
+        </sections>
+        <sections>
+            <label><!-- Payment Terms --></label>
+            <section>Payment Terms</section>
+        </sections>
+    </layouts>
+    <validationRules>
+        <errorMessage><!-- Cannot add or modify Products when Location is sanctioned. --></errorMessage>
+        <name>CannotAddIfLocationSanctioned</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Cannot add or modify fees after Fees have been approved. --></errorMessage>
+        <name>CannotChangePostApproval</name>
+    </validationRules>
+</CustomObjectTranslation>

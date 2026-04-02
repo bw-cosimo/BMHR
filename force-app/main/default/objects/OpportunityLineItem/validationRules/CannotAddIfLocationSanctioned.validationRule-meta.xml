@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CannotAddIfLocationSanctioned</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+OR(
+ISNEW(),
+ISCHANGED(UnitPrice)
+),
+Opportunity.Risk_Rating_Score_Location__r.Is_Sanctioned__c 
+)</errorConditionFormula>
+    <errorMessage>Cannot add or modify Products when Location is sanctioned.</errorMessage>
+</ValidationRule>

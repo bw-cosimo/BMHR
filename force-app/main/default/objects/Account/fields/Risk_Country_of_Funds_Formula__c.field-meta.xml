@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Risk_Country_of_Funds_Formula__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(ISBLANK(Score_Country_of_Funds__c), &quot;&quot;, 
+    IF(Score_Country_of_Funds__c &gt;= 4, IMAGE(&quot;/img/samples/flag_red.gif&quot;, &quot;high&quot;) + &quot; High&quot;,
+        IF(Score_Country_of_Funds__c &gt; 2, IMAGE(&quot;/img/samples/flag_yellow.gif&quot;, &quot;medium&quot;) + &quot; Medium&quot;, 
+            IF(Score_Country_of_Funds__c &gt;= 0, IMAGE(&quot;/img/samples/flag_green.gif&quot;, &quot;low&quot;) + &quot; Low&quot;, &quot;&quot;)
+        )
+    )
+)</formula>
+    <label>Risk - Country of Funds</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

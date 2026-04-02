@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>66.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <customErrors>
+        <name>CannotCreateIfCountrySanctioned</name>
+        <label>CannotCreateIfCountrySanctioned</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <customErrorMessages>
+            <errorMessage>{!errorFormula}</errorMessage>
+            <isFieldError>false</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <decisions>
+        <name>Is_Country_Sanctioned</name>
+        <label>Is Country Sanctioned?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Set_Risk_Link</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Not Sanctioned</defaultConnectorLabel>
+        <rules>
+            <name>Sanctioned</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Location_Risk.Is_Sanctioned__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>CannotCreateIfCountrySanctioned</targetReference>
+            </connector>
+            <label>Sanctioned</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Location_Risk_Found</name>
+        <label>Location Risk Found?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>Not Found</defaultConnectorLabel>
+        <rules>
+            <name>Found</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Location_Risk</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Is_Country_Sanctioned</targetReference>
+            </connector>
+            <label>Found</label>
+        </rules>
+    </decisions>
+    <description>When Location is set or changed, provide Risk Rating Scores - Location link.</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>errorFormula</name>
+        <dataType>String</dataType>
+        <expression>IF(ISNEW(),&apos;Cannot create Opportunity - Location sanctioned.&apos;, &apos;Cannot select sanctioned Location.&apos;)</expression>
+    </formulas>
+    <interviewLabel>Update Risk When Location {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Update Risk When Location is Set or Changed</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Location_Risk</name>
+        <label>Get Location Risk</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Location_Risk_Found</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Location__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Location__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Risk_Rating_Score_Location__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Set_Risk_Link</name>
+        <label>Set Risk Link</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <inputAssignments>
+            <field>Risk_Rating_Score_Location__c</field>
+            <value>
+                <elementReference>Get_Location_Risk.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Location_Risk</targetReference>
+        </connector>
+        <filterFormula>OR(
+AND(
+ISNEW(),
+NOT(ISBLANK(TEXT({!$Record.Location__c})))),
+ISCHANGED({!$Record.Location__c})
+)</filterFormula>
+        <object>Opportunity</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Draft</status>
+</Flow>

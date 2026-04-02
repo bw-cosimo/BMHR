@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>International_Business_User</name>
+    </customPermissions>
+    <description>Provides access to &quot;International Business User&quot; Custom Permission - grants visibility access to IB Dashboard on standard Home Page.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>International Business User</label>
+</PermissionSet>

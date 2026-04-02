@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CannotCreateIfComplianceRejected</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND (
+ISNEW(),
+OR
+(
+ISPICKVAL( Account.Compliance_Status__c, &apos;Rejected&apos;),
+ISPICKVAL( Contracting_Account__r.Compliance_Status__c, &apos;Rejected&apos;),
+ISPICKVAL( Billing_Account__r.Compliance_Status__c, &apos;Rejected&apos;)
+)
+)</errorConditionFormula>
+    <errorMessage>Cannot create a new Opportunity for an Account with Rejected Compliance Status.</errorMessage>
+</ValidationRule>

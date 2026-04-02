@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Super Users</label>
+    <permissionSets>Convert_Leads</permissionSets>
+    <permissionSets>Data_Admin</permissionSets>
+    <permissionSets>Internal_System_Permissions</permissionSets>
+    <permissionSets>Manage_Activities</permissionSets>
+    <permissionSets>Manage_KYC_Responses</permissionSets>
+    <permissionSets>Manage_Reports_and_Dashboards</permissionSets>
+    <permissionSets>Xero_Integration</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

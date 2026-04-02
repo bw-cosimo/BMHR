@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>65.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <description>Runs as a subflow - accepts Source of Wealth as input parameter; returns risk and score based on the Risk Rating - Source of Wealth record.</description>
+    <environments>Default</environments>
+    <interviewLabel>Subflow - Assess Source of Wealth Risk {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Subflow - Assess Source of Wealth Risk</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Risk_Rating_Source_of_Wealth</name>
+        <label>Get Risk Rating - Source of Wealth</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Source_of_Wealth__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>sourceOfWealth</elementReference>
+            </value>
+        </filters>
+        <object>Risk_Rating_Score_Source_of_Wealth__c</object>
+        <outputAssignments>
+            <assignToReference>scoreNum</assignToReference>
+            <field>Score__c</field>
+        </outputAssignments>
+    </recordLookups>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Risk_Rating_Source_of_Wealth</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>scoreNum</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+        <scale>0</scale>
+    </variables>
+    <variables>
+        <name>sourceOfWealth</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

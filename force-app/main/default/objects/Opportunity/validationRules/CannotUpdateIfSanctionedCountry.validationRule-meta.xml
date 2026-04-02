@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CannotUpdateIfSanctionedCountry</fullName>
+    <active>true</active>
+    <description>When Location is sanctioned, the Opportunity Stage cannot be changed to other value than Closed Lost.</description>
+    <errorConditionFormula>AND (
+ISCHANGED(StageName),
+NOT(ISPICKVAL(StageName, &apos;Closed Lost&apos;)),
+Risk_Rating_Score_Location__r.Is_Sanctioned__c
+)</errorConditionFormula>
+    <errorMessage>Cannot modify Opportunity Stage when Location is sanctioned.</errorMessage>
+</ValidationRule>

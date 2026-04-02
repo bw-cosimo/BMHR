@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Sum of recurring fees from Opportunities in which the current account serves as the Servicing Account, and the probability of success is greater than 70%. --></help>
+    <label><!-- Forecast Annual Revenue --></label>
+    <name>Forecast_Annual_Revenue__c</name>
+</CustomFieldTranslation>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- BM System Training Date --></label>
+    <name>BM_System_Training_Date__c</name>
+</CustomFieldTranslation>

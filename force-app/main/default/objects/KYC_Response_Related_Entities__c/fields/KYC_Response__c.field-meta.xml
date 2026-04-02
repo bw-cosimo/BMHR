@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>KYC_Response__c</fullName>
+    <label>KYC Response</label>
+    <referenceTo>KYC_Response__c</referenceTo>
+    <relationshipLabel>KYC Response - Related Entities</relationshipLabel>
+    <relationshipName>KYC_Response_Related_Entities</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Are there any instances on record or pending against your Company and /or its Directors in respect of any financial matter, corporate or management malpractice or non-compliance with any statute? --></help>
+    <label><!-- Corporate or Management Malpractice --></label>
+    <name>Corporate_or_Management_Malpractice__c</name>
+</CustomFieldTranslation>

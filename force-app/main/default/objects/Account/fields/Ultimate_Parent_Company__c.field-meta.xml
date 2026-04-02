@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ultimate_Parent_Company__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+    NOT(ISBLANK(Parent.Parent.Parent.Parent.ParentId)),
+    HYPERLINK(&quot;/&quot; &amp; Parent.Parent.Parent.Parent.ParentId, Parent.Parent.Parent.Parent.Parent.Name, &quot;_self&quot;),
+    IF(
+        NOT(ISBLANK(Parent.Parent.Parent.ParentId)),
+        HYPERLINK(&quot;/&quot; &amp; Parent.Parent.Parent.ParentId, Parent.Parent.Parent.Parent.Name, &quot;_self&quot;),
+        IF(
+            NOT(ISBLANK(Parent.Parent.ParentId)),
+            HYPERLINK(&quot;/&quot; &amp; Parent.Parent.ParentId, Parent.Parent.Parent.Name, &quot;_self&quot;),
+            IF(
+                NOT(ISBLANK(Parent.ParentId)),
+                HYPERLINK(&quot;/&quot; &amp; Parent.ParentId, Parent.Parent.Name, &quot;_self&quot;),
+                IF(
+                    NOT(ISBLANK(ParentId)),
+                    HYPERLINK(&quot;/&quot; &amp; ParentId, Parent.Name, &quot;_self&quot;),
+                    NULL
+                )
+            )
+        )
+    )
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>There is a maximum of 5 levels in the account hierarchy.</inlineHelpText>
+    <label>Ultimate Parent Company</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

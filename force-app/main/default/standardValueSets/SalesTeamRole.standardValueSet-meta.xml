@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Account Manager</fullName>
+        <default>false</default>
+        <label>Account Manager</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Sales Executive</fullName>
+        <default>false</default>
+        <label>Sales Executive</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Account Handler - Primary</fullName>
+        <default>false</default>
+        <label>Account Handler - Primary</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Account Handler - Backup</fullName>
+        <default>false</default>
+        <label>Account Handler - Backup</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Implementation Manager</fullName>
+        <default>false</default>
+        <label>Implementation Manager</label>
+    </standardValue>
+</StandardValueSet>

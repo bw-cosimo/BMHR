@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Annual turnover in the Client&apos;s base currency. Typically found in the Client&apos;s Annual return. --></help>
+    <label><!-- Client Turnover (Annual) --></label>
+    <name>Client_Turnover_Annual__c</name>
+</CustomFieldTranslation>

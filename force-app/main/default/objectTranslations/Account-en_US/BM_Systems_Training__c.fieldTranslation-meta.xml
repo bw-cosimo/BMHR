@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- BM Systems Training --></label>
+    <name>BM_Systems_Training__c</name>
+    <picklistValues>
+        <masterLabel>BM Technology partners</masterLabel>
+        <translation><!-- BM Technology partners --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Ippex</masterLabel>
+        <translation><!-- Ippex --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Other</masterLabel>
+        <translation><!-- Other --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Payzaar</masterLabel>
+        <translation><!-- Payzaar --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>People HR</masterLabel>
+        <translation><!-- People HR --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

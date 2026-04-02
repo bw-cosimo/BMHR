@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Won_Reasons__c</fullName>
+    <label>Won Reason(s)</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Strong product fit/value proposition</fullName>
+                <default>false</default>
+                <label>Strong product fit/value proposition</label>
+            </value>
+            <value>
+                <fullName>Competitive pricing</fullName>
+                <default>false</default>
+                <label>Competitive pricing</label>
+            </value>
+            <value>
+                <fullName>Existing relationship</fullName>
+                <default>false</default>
+                <label>Existing relationship</label>
+            </value>
+            <value>
+                <fullName>Established trust (i.e. references/referrals)</fullName>
+                <default>false</default>
+                <label>Established trust (i.e. references/referrals)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

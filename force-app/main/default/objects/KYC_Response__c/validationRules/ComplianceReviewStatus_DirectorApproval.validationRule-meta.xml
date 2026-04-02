@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ComplianceReviewStatus_DirectorApproval</fullName>
+    <active>true</active>
+    <description>Director Approval is required before Status can be set to Pending Compliance Review.</description>
+    <errorConditionFormula>AND(
+OR(
+AND(
+RecordType.DeveloperName = &apos;Partner_Affiliate_Form&apos;,
+NOT(Partner_Team_Director_Approval__c)),
+AND(
+RecordType.DeveloperName = &apos;Client_Form&apos;,
+NOT(Client_Solution_Director_Approval__c))
+),
+ISCHANGED(Form_Response_Status__c),
+ISPICKVAL(Form_Response_Status__c, &apos;Pending Compliance Review&apos;)
+)</errorConditionFormula>
+    <errorDisplayField>Form_Response_Status__c</errorDisplayField>
+    <errorMessage>The status may be updated to &quot;Pending Compliance Review&quot; only when the Director Approval checkbox has been selected.</errorMessage>
+</ValidationRule>

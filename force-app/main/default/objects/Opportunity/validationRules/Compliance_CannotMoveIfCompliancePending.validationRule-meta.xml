@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Compliance_CannotMoveIfCompliancePending</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+NOT(ISPICKVAL(Account.Compliance_Status__c, &apos;Approved&apos;)),
+NOT(ISPICKVAL(Contracting_Account__r.Compliance_Status__c, &apos;Approved&apos;)),
+NOT(ISPICKVAL(Billing_Account__r.Compliance_Status__c, &apos;Approved&apos;)),
+ISCHANGED(StageName),
+ISPICKVAL(StageName, &apos;Contract Signature&apos;)
+)</errorConditionFormula>
+    <errorMessage>Cannot move to Contract Signature until all related Accounts compliance status is Approved.</errorMessage>
+</ValidationRule>

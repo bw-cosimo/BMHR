@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Company Tax / VAT / GST Number --></label>
+    <name>Company_Tax_VAT_GST_Number__c</name>
+</CustomFieldTranslation>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Initiator</fullName>
+        <default>false</default>
+        <label>Initiator</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Decision-maker</fullName>
+        <default>false</default>
+        <label>Decision-maker</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Contract Signatory</fullName>
+        <default>false</default>
+        <label>Contract Signatory</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Economic Buyer</fullName>
+        <default>false</default>
+        <label>Economic Buyer</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Champion</fullName>
+        <default>false</default>
+        <label>Champion</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Detractor</fullName>
+        <default>false</default>
+        <label>Detractor</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Gatekeeper</fullName>
+        <default>false</default>
+        <label>Gatekeeper</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Influencer</fullName>
+        <default>false</default>
+        <label>Influencer</label>
+    </standardValue>
+    <standardValue>
+        <fullName>End-user</fullName>
+        <default>false</default>
+        <label>End-user</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Primary Billing Contact</fullName>
+        <default>false</default>
+        <label>Primary Billing Contact</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Additional Billing Contact</fullName>
+        <default>false</default>
+        <label>Additional Billing Contact</label>
+    </standardValue>
+</StandardValueSet>

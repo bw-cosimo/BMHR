@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <description>Syncs the credit notes last modified within the last day from Xero.</description>
+        <name>Sync_Credit_Notes_from_Xero</name>
+        <label>Sync Credit Notes from Xero</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <actionName>XeroCreditNoteSyncAction</actionName>
+        <actionType>apex</actionType>
+        <faultConnector>
+            <targetReference>Insert_Error_Log</targetReference>
+        </faultConnector>
+        <flowTransactionModel>Automatic</flowTransactionModel>
+        <nameSegment>XeroCreditNoteSyncAction</nameSegment>
+        <offset>0</offset>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
+    <apiVersion>65.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <description>Scheduled flow which runs at 11:45pm daily and syncs credit notes from Xero.</description>
+    <environments>Default</environments>
+    <interviewLabel>Sync Credit Notes From Xero - Scheduled Flow {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Sync Credit Notes From Xero - Scheduled Flow</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>Insert_Error_Log</name>
+        <label>Insert Error Log</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <inputAssignments>
+            <field>Error_Message__c</field>
+            <value>
+                <stringValue>Sync Credit Notes From Xero Job Failed</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Stack_Trace__c</field>
+            <value>
+                <elementReference>$Flow.FaultMessage</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Type__c</field>
+            <value>
+                <stringValue>Flow</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Error_Log__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Sync_Credit_Notes_from_Xero</targetReference>
+        </connector>
+        <schedule>
+            <frequency>Daily</frequency>
+            <startDate>2025-11-26</startDate>
+            <startTime>23:45:00.000Z</startTime>
+        </schedule>
+        <triggerType>Scheduled</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionNumber>4</activeVersionNumber>
+    <description>Calculate BM Entity based on the country and Product Category. Runs as a subflow, triggered from Opportunity Product flow.</description>
+    <masterLabel>Subflow - Calculate BM Entity Based on Country</masterLabel>
+</FlowDefinition>

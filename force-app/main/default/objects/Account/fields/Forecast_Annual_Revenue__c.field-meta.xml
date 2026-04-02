@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Forecast_Annual_Revenue__c</fullName>
+    <inlineHelpText>Sum of recurring fees from Opportunities in which the current account serves as the Servicing Account, and the probability of success is greater than 70%.</inlineHelpText>
+    <label>Forecast Annual Revenue</label>
+    <summarizedField>Opportunity.ARR__c</summarizedField>
+    <summaryFilterItems>
+        <field>Opportunity.Probability</field>
+        <operation>greaterOrEqual</operation>
+        <value>70</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Opportunity.AccountId</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <type>Summary</type>
+</CustomField>

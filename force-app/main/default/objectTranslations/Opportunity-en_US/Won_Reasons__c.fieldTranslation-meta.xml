@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Won Reason(s) --></label>
+    <name>Won_Reasons__c</name>
+    <picklistValues>
+        <masterLabel>Competitive pricing</masterLabel>
+        <translation><!-- Competitive pricing --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Established trust (i.e. references/referrals)</masterLabel>
+        <translation><!-- Established trust (i.e. references/referrals) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Existing relationship</masterLabel>
+        <translation><!-- Existing relationship --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Strong product fit/value proposition</masterLabel>
+        <translation><!-- Strong product fit/value proposition --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

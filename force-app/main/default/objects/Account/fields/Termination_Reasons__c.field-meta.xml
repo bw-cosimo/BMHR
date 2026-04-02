@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Termination_Reasons__c</fullName>
+    <inlineHelpText>Termination Reason(s) - Non-Service Related</inlineHelpText>
+    <label>Termination Reason(s)</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Chose Competitor</fullName>
+                <default>false</default>
+                <label>Chose Competitor</label>
+            </value>
+            <value>
+                <fullName>Acquisition / Merger</fullName>
+                <default>false</default>
+                <label>Acquisition / Merger</label>
+            </value>
+            <value>
+                <fullName>Contract Expired / Not Renewed</fullName>
+                <default>false</default>
+                <label>Contract Expired / Not Renewed</label>
+            </value>
+            <value>
+                <fullName>Business Closure</fullName>
+                <default>false</default>
+                <label>Business Closure</label>
+            </value>
+            <value>
+                <fullName>Leadership Change</fullName>
+                <default>false</default>
+                <label>Leadership Change</label>
+            </value>
+            <value>
+                <fullName>Consolidation to fewer vendors</fullName>
+                <default>false</default>
+                <label>Consolidation to fewer vendors</label>
+            </value>
+            <value>
+                <fullName>BM decisions to offboard client</fullName>
+                <default>false</default>
+                <label>BM decisions to offboard client</label>
+            </value>
+            <value>
+                <fullName>Pricing too high</fullName>
+                <default>false</default>
+                <label>Pricing too high</label>
+            </value>
+            <value>
+                <fullName>Budget Constraints</fullName>
+                <default>false</default>
+                <label>Budget Constraints</label>
+            </value>
+            <value>
+                <fullName>Perceived Lack of ROI</fullName>
+                <default>false</default>
+                <label>Perceived Lack of ROI</label>
+            </value>
+            <value>
+                <fullName>Service Quality</fullName>
+                <default>false</default>
+                <label>Service Quality</label>
+            </value>
+            <value>
+                <fullName>Unresolved support issues</fullName>
+                <default>false</default>
+                <label>Unresolved support issues</label>
+            </value>
+            <value>
+                <fullName>Taken in House</fullName>
+                <default>false</default>
+                <label>Taken in House</label>
+            </value>
+            <value>
+                <fullName>Change of Vendor</fullName>
+                <default>false</default>
+                <label>Change of Vendor</label>
+            </value>
+            <value>
+                <fullName>Legal / Compliance Concerns</fullName>
+                <default>false</default>
+                <label>Legal / Compliance Concerns</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

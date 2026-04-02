@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>66.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <description>When any Risk Score is modified, recalculate overall Risk Level. Supports manual score update as well as running the process via action.</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>avgScoreNoWeighting</name>
+        <dataType>Number</dataType>
+        <expression>({!$Record.Score_Country_of_Funds__c} + {!$Record.Score_Country_of_Incorporation__c} + {!$Record.Score_Country_of_Operation__c} + {!$Record.Score_Fundflow__c} + {!$Record.Score_Industry__c} + {!$Record.Score_Legal_Structure__c} + {!$Record.Score_Primary_Source_of_Wealth__c} + {!$Record.Score_Services__c} + {!$Record.Score_Transaction__c})/{!noOfNonEmptyCells}</expression>
+        <scale>3</scale>
+    </formulas>
+    <formulas>
+        <name>noOfNonEmptyCells</name>
+        <dataType>Number</dataType>
+        <expression>IF(ISBLANK({!$Record.Score_Country_of_Funds__c}),0,1) +
+IF(ISBLANK({!$Record.Score_Country_of_Incorporation__c}),0,1) +
+IF(ISBLANK({!$Record.Score_Country_of_Operation__c}),0,1) +
+IF(ISBLANK({!$Record.Score_Fundflow__c}),0,1) +
+IF(ISBLANK({!$Record.Score_Industry__c}),0,1) +
+IF(ISBLANK({!$Record.Score_Legal_Structure__c}),0,1) +
+IF(ISBLANK({!$Record.Score_Primary_Source_of_Wealth__c}),0,1) +
+IF(ISBLANK({!$Record.Score_Services__c}),0,1) +
+IF(ISBLANK({!$Record.Score_Transaction__c}),0,1)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>ratingResultWeighted</name>
+        <dataType>Number</dataType>
+        <expression>(0.1 * BLANKVALUE({!$Record.Score_Country_of_Funds__c}, 0)) +
+(0.15 * BLANKVALUE({!$Record.Score_Country_of_Incorporation__c}, 0)) +
+(0.1 * BLANKVALUE({!$Record.Score_Country_of_Operation__c}, 0)) +
+(0.05 * BLANKVALUE({!$Record.Score_Fundflow__c}, 0)) +
+(0.1 * BLANKVALUE({!$Record.Score_Industry__c}, 0)) +
+(0.15 * BLANKVALUE({!$Record.Score_Legal_Structure__c}, 0)) +
+(0.1 * BLANKVALUE({!$Record.Score_Primary_Source_of_Wealth__c}, 0)) +
+(0.05 *BLANKVALUE({!$Record.Score_Services__c}, 0)) +
+(0.2 * BLANKVALUE({!$Record.Score_Transaction__c}, 0))</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>riskFinal</name>
+        <dataType>String</dataType>
+        <expression>IF(
+    {!riskScoreWeightedFinal} = 0, &quot;Not Rated&quot;,
+    IF(
+        {!riskScoreWeightedFinal} &lt;= 2, &quot;Low&quot;,
+        IF(
+            AND({!riskScoreWeightedFinal} &gt; 2, {!riskScoreWeightedFinal} &lt; 4), &quot;Medium&quot;,
+            IF(
+                {!riskScoreWeightedFinal} &gt;= 4, &quot;High&quot;,
+                &quot;&quot;
+            )
+        )
+    )
+)</expression>
+    </formulas>
+    <formulas>
+        <name>riskScoreWeightedFinal</name>
+        <dataType>Number</dataType>
+        <expression>ROUND({!ratingResultWeighted},2)</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>today</name>
+        <dataType>Date</dataType>
+        <expression>TODAY()</expression>
+    </formulas>
+    <interviewLabel>Recalculate Final Risk when Any Risk Score is Modified {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Recalculate Final Risk when Any Risk Score is Modified</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Assign_Final_Results</name>
+        <label>Assign Final Results</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <inputAssignments>
+            <field>Average_Risk_Score_No_Weighting__c</field>
+            <value>
+                <elementReference>avgScoreNoWeighting</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Rating_Result_Weighted__c</field>
+            <value>
+                <elementReference>ratingResultWeighted</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Risk_Assessment_Date__c</field>
+            <value>
+                <elementReference>today</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Risk_Assessment__c</field>
+            <value>
+                <elementReference>riskFinal</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Risk_Score_Weighted__c</field>
+            <value>
+                <elementReference>riskScoreWeightedFinal</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Assign_Final_Results</targetReference>
+        </connector>
+        <filterFormula>OR(
+ISCHANGED({!$Record.Score_Country_of_Funds__c}),
+ISCHANGED({!$Record.Score_Country_of_Incorporation__c}),
+ISCHANGED({!$Record.Score_Country_of_Operation__c}),
+ISCHANGED({!$Record.Score_Fundflow__c}),
+ISCHANGED({!$Record.Score_Industry__c}),
+ISCHANGED({!$Record.Score_Legal_Structure__c}),
+ISCHANGED({!$Record.Score_Primary_Source_of_Wealth__c}),
+ISCHANGED({!$Record.Score_Services__c}),
+ISCHANGED({!$Record.Score_Transaction__c}),
+ISCHANGED({!$Record.Risk_Score_Weighted__c})
+)</filterFormula>
+        <object>Account</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

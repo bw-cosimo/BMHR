@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_First_Year_of_Opportunity__c</fullName>
+    <formula>AND(
+  Commencement_Date__c &lt;= TODAY(),
+  TODAY() &lt; ADDMONTHS(Commencement_Date__c, 12)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Is First Year of Opportunity?</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <layouts>
+        <layout>Opportunity Layout</layout>
+        <sections>
+            <label><!-- Opportunity Value --></label>
+            <section>Opportunity Value</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label><!-- Dismiss Entity Warning --></label>
+        <name>Dismiss_Entity_Warning</name>
+    </quickActions>
+    <validationRules>
+        <errorMessage><!-- Cannot change Account once Products are added, contact your System Admin for help. --></errorMessage>
+        <name>CannotChangeAccountOnceProductsSet</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Cannot create a new Opportunity for an Account with Rejected Compliance Status. --></errorMessage>
+        <name>CannotCreateIfComplianceRejected</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Cannot modify Opportunity Stage when Location is sanctioned. --></errorMessage>
+        <name>CannotUpdateIfSanctionedCountry</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Cannot move to Contract Signature until all related Accounts compliance status is Approved. --></errorMessage>
+        <name>Compliance_CannotMoveIfCompliancePending</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Parent Opportunity currency must be HKD. --></errorMessage>
+        <name>Currency_MultiLevelOpportunity</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Choose reason why Opportunity was lost. --></errorMessage>
+        <name>StageClosedLost_ProvideReason</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Populate the Commencement Date. --></errorMessage>
+        <name>StageClosedWon_CommencementDate</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Link Contract. --></errorMessage>
+        <name>StageClosedWon_Contract</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Populate the Contract Length (Months). --></errorMessage>
+        <name>StageClosedWon_ContractTerms</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Choose reason why Opportunity was won. --></errorMessage>
+        <name>StageClosedWon_ProvideReason</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Cannot move to Proposal Creation stage until fees are approved. Submit the record for approval. --></errorMessage>
+        <name>StageProposalCreation_FeesApproval</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You can’t skip stages. Please move to the next stage in order. --></errorMessage>
+        <name>Stage_CannotSkipValue</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Send_Pardot_Emails --></label>
+        <name>pi__Send_Pardot_Emails</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Send_Single_Pardot_Email --></label>
+        <name>pi__Send_Single_Pardot_Email</name>
+    </webLinks>
+</CustomObjectTranslation>
